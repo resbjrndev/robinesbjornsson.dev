@@ -69,21 +69,49 @@ export default function Home() {
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="transition-all duration-300 hover:scale-110 bg-transparent border-none p-0"
-          style={{ marginTop: '32px', marginRight: '32px' }}
+          className="relative overflow-hidden transition-all duration-300 hover:scale-110"
+          style={{
+            marginTop: '32px',
+            marginRight: '32px',
+            width: '72px',
+            height: '36px',
+            borderRadius: '18px',
+            backgroundColor: 'transparent',
+            border: `2px solid ${darkMode ? '#ffffff' : '#3b82f6'}`,
+            cursor: 'pointer'
+          }}
           aria-label="Toggle dark mode"
         >
-          <Image
-            src={darkMode ? lightModeToggle : darkModeToggle}
-            alt={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            width={36}
-            height={36}
+          {/* Sliding Circle */}
+          <div
             style={{
-              transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
-              opacity: imageTransition ? 0 : 1,
-              transform: imageTransition ? 'rotate(180deg) scale(0.8)' : 'rotate(0deg) scale(1)'
+              position: 'absolute',
+              top: '50%',
+              left: darkMode ? '39px' : '3px',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              backgroundColor: 'transparent',
+              border: `2px solid ${darkMode ? '#ffffff' : '#3b82f6'}`,
+              transition: 'left 0.3s ease-in-out, border-color 0.3s ease-in-out',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transform: 'translateY(-50%)'
             }}
-          />
+          >
+            {/* SVG Icon in Circle */}
+            <Image
+              src={darkMode ? darkModeToggle : lightModeToggle}
+              alt={darkMode ? 'Dark mode' : 'Light mode'}
+              width={20}
+              height={20}
+              style={{
+                filter: darkMode ? 'brightness(0) saturate(100%) invert(100%)' : 'brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%) hue-rotate(204deg) brightness(97%) contrast(97%)'
+              }}
+            />
+          </div>
         </button>
       </header>
 
@@ -94,15 +122,18 @@ export default function Home() {
           display: 'grid',
           gridTemplateColumns: isDesktop ? '1fr 1fr' : '1fr',
           alignItems: 'center',
-          gap: isDesktop ? '4rem' : '0.5rem',
+          gap: isDesktop ? '4rem' : '0rem',
           maxWidth: '1200px',
           margin: '0 auto',
           minHeight: 'calc(100vh - 120px)',
-          padding: '2rem'
+          padding: isDesktop ? '2rem' : '1rem'
         }}
       >
         {/* Profile Image Section */}
-        <div style={{ justifySelf: isDesktop ? 'end' : 'center' }}>
+        <div style={{
+          justifySelf: isDesktop ? 'end' : 'center',
+          marginRight: isDesktop ? '-5rem' : '0'
+        }}>
           <div className="relative">
             {/* Animated Profile Image Container */}
             <div
@@ -160,7 +191,8 @@ export default function Home() {
                 opacity: imageTransition ? 0 : 1,
                 transform: imageTransition ? 'scale(0.95)' : 'scale(1)',
                 display: 'block',
-                marginBottom: '-10px'
+                marginBottom: '-10px',
+                marginTop: isDesktop ? '0' : '-20rem'
               }}
             />
           </motion.div>
@@ -182,28 +214,34 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex gap-6 mb-8"
+            className="flex gap-16 mb-8"
           >
             <a
-              href="#contact"
-              className="font-semibold hover:underline transition-colors"
-              style={{ color: darkMode ? 'white' : '#2563eb' }}
+              href="https://www.linkedin.com/in/robinesbjornsson/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold transition-colors"
+              style={{
+                color: darkMode ? 'white' : '#2563eb',
+                textDecoration: 'none',
+                marginRight: '2.4rem',
+                fontWeight: 'bold'
+              }}
             >
-              Contact
+              LinkedIn
             </a>
             <a
-              href="#linkedin"
-              className="font-semibold hover:underline transition-colors"
-              style={{ color: darkMode ? 'white' : '#2563eb' }}
+              href="https://github.com/robinesbjornsson?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold transition-colors"
+              style={{
+                color: darkMode ? 'white' : '#2563eb',
+                textDecoration: 'none',
+                fontWeight: 'bold'
+              }}
             >
-              Linkedin
-            </a>
-            <a
-              href="#github"
-              className="font-semibold hover:underline transition-colors"
-              style={{ color: darkMode ? 'white' : '#2563eb' }}
-            >
-              Github
+              GitHub
             </a>
           </motion.div>
 
