@@ -12,7 +12,6 @@ import Image from 'next/image';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [imageTransition, setImageTransition] = useState(false);
 
   // Load saved theme preference
@@ -21,16 +20,6 @@ export default function Home() {
     if (savedTheme === 'dark') {
       setDarkMode(true);
     }
-
-    // Check screen size
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-
-    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   // Save theme preference and apply to document
@@ -117,23 +106,10 @@ export default function Home() {
 
       {/* Main Content */}
       <main
-        className="container mx-auto px-8 py-8"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: isDesktop ? '1fr 1fr' : '1fr',
-          alignItems: 'center',
-          gap: isDesktop ? '4rem' : '0rem',
-          maxWidth: '1200px',
-          margin: '0 auto',
-          minHeight: 'calc(100vh - 120px)',
-          padding: isDesktop ? '2rem' : '1rem'
-        }}
+        className="main-container"
       >
         {/* Profile Image Section */}
-        <div style={{
-          justifySelf: isDesktop ? 'end' : 'center',
-          marginRight: isDesktop ? '-5rem' : '0'
-        }}>
+        <div className="profile-section">
           <div className="relative">
             {/* Animated Profile Image Container */}
             <div
@@ -171,7 +147,7 @@ export default function Home() {
         </div>
 
         {/* Content Section */}
-        <div style={{ justifySelf: isDesktop ? 'start' : 'center', maxWidth: '500px' }}>
+        <div className="content-section">
           {/* Handwritten Style Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -186,13 +162,13 @@ export default function Home() {
               height={80}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABA..." // tiny base64 image
+              className="header-image"
               style={{
                 transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
                 opacity: imageTransition ? 0 : 1,
                 transform: imageTransition ? 'scale(0.95)' : 'scale(1)',
                 display: 'block',
-                marginBottom: '-10px',
-                marginTop: isDesktop ? '0' : '-20rem'
+                marginBottom: '-10px'
               }}
             />
           </motion.div>
@@ -204,7 +180,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className={`text-lg mb-6 ${darkMode ? 'text-white' : 'text-gray-700'}`}
           >
-            I'm a Frontend Engineer focused on React, TypeScript.
+            I&apos;m a Frontend Engineer focused on React & TypeScript.
             I build fast, accessible products with clean
             architectures and delightful micro-interactions.
           </motion.p>
@@ -257,8 +233,57 @@ export default function Home() {
         </div>
       </main>
 
-      {/* CSS for animations */}
+      {/* CSS for animations and responsive layout */}
       <style jsx>{`
+        .main-container {
+          display: grid;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          min-height: calc(100vh - 120px);
+          padding: 1rem;
+
+          /* Mobile first - stack vertically */
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          gap: 0rem;
+        }
+
+        .profile-section {
+          justify-self: center;
+          margin-right: 0;
+        }
+
+        .content-section {
+          justify-self: center;
+          max-width: 500px;
+          margin-top: -20rem;
+        }
+
+        .header-image {
+          margin-top: 0;
+        }
+
+        /* Desktop - side by side */
+        @media (min-width: 768px) {
+          .main-container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 4rem;
+            padding: 2rem;
+          }
+
+          .profile-section {
+            justify-self: end;
+            margin-right: -5rem;
+          }
+
+          .content-section {
+            justify-self: start;
+            margin-top: 0;
+          }
+        }
+
         @keyframes morph {
           0%, 100% {
             border-radius: 50%;
