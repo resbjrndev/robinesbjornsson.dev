@@ -76,7 +76,7 @@ export default function Home() {
             style={{
               position: 'absolute',
               top: '50%',
-              left: darkMode ? '39px' : '3px',
+              left: darkMode ? '40px' : '3px',
               width: '30px',
               height: '30px',
               borderRadius: '50%',
@@ -257,7 +257,7 @@ export default function Home() {
         .content-section {
           justify-self: center;
           max-width: 500px;
-          margin-top: -20rem;
+          margin-top: -8rem;
         }
 
         .header-image {
