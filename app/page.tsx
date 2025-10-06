@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
-  const [imageTransition, setImageTransition] = useState(false);
+  // const [imageTransition, setImageTransition] = useState(false);
   // const [activeSection, setActiveSection] = useState('');
   const [activeCompany, setActiveCompany] = useState('Osstell');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -678,7 +678,7 @@ export default function Home() {
                   lineHeight: '1.6'
                 }}
               >
-                I'm an experienced fullstack developer with a passion for creating engaging and accessible user experiences. My work focuses on building robust, scalable applications using modern web technologies, with particular attention to accessibility standards and best practices.
+                I&apos;m an experienced fullstack developer with a passion for creating engaging and accessible user experiences. My work focuses on building robust, scalable applications using modern web technologies, with particular attention to accessibility standards and best practices.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -717,7 +717,7 @@ export default function Home() {
                   lineHeight: '1.6'
                 }}
               >
-                Here are a few technologies I've been working with recently:
+                Here are a few technologies I&apos;ve been working with recently:
               </motion.p>
               <motion.ul
                 initial={{ opacity: 0, y: 30 }}
@@ -804,7 +804,7 @@ export default function Home() {
                       display: 'block',
                       objectFit: 'cover',
                       transition: 'opacity 0.5s ease-in-out',
-                      opacity: imageTransition ? 0 : 1
+                      opacity: 1
                     }}
                   />
                 </div>
