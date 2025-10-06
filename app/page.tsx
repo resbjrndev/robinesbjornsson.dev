@@ -987,7 +987,7 @@ export default function Home() {
                   <ul style={{ listStyle: 'none', padding: 0 }}>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
                       <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
-                      Led development and optimization of the company's core platform with TypeScript, React, and Node.js in a fast-paced environment
+                      Led development and optimization of the company&apos;s core platform with TypeScript, React, and Node.js in a fast-paced environment
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
                       <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
