@@ -9,7 +9,7 @@ import Image from 'next/image';
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [imageTransition, setImageTransition] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  // const [activeSection, setActiveSection] = useState('');
   const [activeCompany, setActiveCompany] = useState('Osstell');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,13 +34,13 @@ export default function Home() {
     }
   }, [darkMode]);
 
-  const toggleDarkMode = () => {
-    setImageTransition(true);
-    setTimeout(() => {
-      setDarkMode(!darkMode);
-      setTimeout(() => setImageTransition(false), 50);
-    }, 250);
-  };
+  // const toggleDarkMode = () => {
+  //   setImageTransition(true);
+  //   setTimeout(() => {
+  //     setDarkMode(!darkMode);
+  //     setTimeout(() => setImageTransition(false), 50);
+  //   }, 250);
+  // };
 
   // Scroll detection for header shadow
   useEffect(() => {
@@ -51,24 +51,24 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for section detection
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => observer.observe(section));
-
-    return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+  // Intersection Observer for section detection (disabled, unused)
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           setActiveSection(entry.target.id);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.3 }
+  //   );
+  //
+  //   const sections = document.querySelectorAll('section[id]');
+  //   sections.forEach((section) => observer.observe(section));
+  //
+  //   return () => sections.forEach((section) => observer.unobserve(section));
+  // }, []);
 
   // Lock body scroll when menu is open
   useEffect(() => {
@@ -842,7 +842,7 @@ export default function Home() {
               gap: '10px'
             }}
           >
-            <span style={{ color: '#70B5FF' }}>02.</span> Where I've Worked
+            <span style={{ color: '#70B5FF' }}>02.</span> Where I&apos;ve Worked
             <div
               style={{
                 height: '1px',
@@ -1108,7 +1108,7 @@ export default function Home() {
               gap: '10px'
             }}
           >
-            <span style={{ color: '#70B5FF' }}>03.</span> Some Things I've Built
+            <span style={{ color: '#70B5FF' }}>03.</span> Some Things I&apos;ve Built
             <div
               style={{
                 height: '1px',
@@ -1240,13 +1240,13 @@ export default function Home() {
           }}
         >
           <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '16px', color: '#70B5FF', marginBottom: '20px' }}>
-            04. What's Next?
+            04. What&apos;s Next?
           </p>
           <h2 style={{ fontSize: '60px', fontWeight: '600', color: '#ccd6f6', marginBottom: '20px' }}>
             Get In Touch
           </h2>
           <p style={{ fontSize: '18px', color: '#8892b0', marginBottom: '50px', lineHeight: '1.5' }}>
-            My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            My inbox is always open. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
 
 
@@ -1358,7 +1358,7 @@ export default function Home() {
             robin.esbjornsson@hotmail.com
           </a>
         </div>
-        Designed & Built by Robin Esbjörnsson
+  Designed &amp; Built by Robin Esbjörnsson
       </footer>
 
       {/* CSS */}
