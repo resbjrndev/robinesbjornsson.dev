@@ -136,7 +136,7 @@ export default function Home() {
           transition: 'box-shadow 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)'
         }}
       >
-        {/* Logo - Hexagonal SVG with "B" */}
+        {/* Logo - Text */}
         <button
           onClick={scrollToTop}
           style={{
@@ -144,30 +144,16 @@ export default function Home() {
             border: 'none',
             cursor: 'pointer',
             padding: 0,
-            transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
+            transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
+            fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#ccd6f6'
           }}
           className="logo-button"
           aria-label="Scroll to top"
         >
-          <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <polygon
-              points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"
-              stroke="#64ffda"
-              strokeWidth="3"
-              fill="none"
-            />
-            <text
-              x="50"
-              y="67"
-              fontFamily="'SF Mono', 'Fira Code', 'JetBrains Mono', monospace"
-              fontSize="50"
-              fill="#64ffda"
-              textAnchor="middle"
-              fontWeight="600"
-            >
-              B
-            </text>
-          </svg>
+          robinesbjornsson.dev
         </button>
 
         {/* Desktop Navigation Items */}
@@ -188,7 +174,7 @@ export default function Home() {
             }}
             className="nav-link"
           >
-            <span style={{ color: '#64ffda' }}>01.</span> About
+            <span style={{ color: '#70B5FF' }}>01.</span> About
           </a>
           <a
             href="#experience"
@@ -206,7 +192,7 @@ export default function Home() {
             }}
             className="nav-link"
           >
-            <span style={{ color: '#64ffda' }}>02.</span> Experience
+            <span style={{ color: '#70B5FF' }}>02.</span> Experience
           </a>
           <a
             href="#projects"
@@ -224,7 +210,7 @@ export default function Home() {
             }}
             className="nav-link"
           >
-            <span style={{ color: '#64ffda' }}>03.</span> Work
+            <span style={{ color: '#70B5FF' }}>03.</span> Work
           </a>
           <a
             href="#contact"
@@ -242,7 +228,7 @@ export default function Home() {
             }}
             className="nav-link"
           >
-            <span style={{ color: '#64ffda' }}>04.</span> Contact
+            <span style={{ color: '#70B5FF' }}>04.</span> Contact
           </a>
           <a
             href="/RobinEsbjornsson_CV.pdf"
@@ -251,9 +237,9 @@ export default function Home() {
             style={{
               fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
               fontSize: '13px',
-              color: '#64ffda',
+              color: '#70B5FF',
               textDecoration: 'none',
-              border: '1px solid #64ffda',
+              border: '1px solid #70B5FF',
               padding: '12px 16px',
               borderRadius: '4px',
               transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
@@ -280,7 +266,9 @@ export default function Home() {
             width: '30px',
             height: '24px',
             flexDirection: 'column',
-            justifyContent: 'space-between'
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '6px'
           }}
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
@@ -289,16 +277,17 @@ export default function Home() {
             style={{
               width: '100%',
               height: '2px',
-              backgroundColor: '#64ffda',
-              transform: mobileMenuOpen ? 'rotate(45deg) translate(7px, 7px)' : 'none',
-              transition: 'all 0.3s ease-in-out'
+              backgroundColor: '#70B5FF',
+              transform: mobileMenuOpen ? 'rotate(45deg) translateY(4px)' : 'none',
+              transition: 'all 0.3s ease-in-out',
+              transformOrigin: 'center'
             }}
           />
           <div
             style={{
               width: '100%',
               height: '2px',
-              backgroundColor: '#64ffda',
+              backgroundColor: '#70B5FF',
               opacity: mobileMenuOpen ? 0 : 1,
               transition: 'all 0.3s ease-in-out'
             }}
@@ -307,9 +296,10 @@ export default function Home() {
             style={{
               width: '100%',
               height: '2px',
-              backgroundColor: '#64ffda',
-              transform: mobileMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
-              transition: 'all 0.3s ease-in-out'
+              backgroundColor: '#70B5FF',
+              transform: mobileMenuOpen ? 'rotate(-45deg) translateY(-4px)' : 'none',
+              transition: 'all 0.3s ease-in-out',
+              transformOrigin: 'center'
             }}
           />
         </button>
@@ -343,7 +333,7 @@ export default function Home() {
           right: 0,
           width: '60vw',
           height: '100vh',
-          backgroundColor: 'rgba(10, 25, 47, 0.95)',
+          backgroundColor: '#0a192f',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -368,37 +358,31 @@ export default function Home() {
             cursor: 'pointer',
             padding: '5px',
             width: '30px',
-            height: '24px',
+            height: '30px',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between'
+            alignItems: 'center',
+            justifyContent: 'center'
           }}
           aria-label="Close menu"
         >
           <div
             style={{
+              position: 'absolute',
               width: '100%',
               height: '2px',
-              backgroundColor: '#64ffda',
-              transform: 'rotate(45deg) translate(7px, 7px)',
+              backgroundColor: '#70B5FF',
+              transform: 'rotate(45deg)',
               transition: 'all 0.3s ease-in-out'
             }}
           />
           <div
             style={{
+              position: 'absolute',
               width: '100%',
               height: '2px',
-              backgroundColor: '#64ffda',
-              opacity: 0,
-              transition: 'all 0.3s ease-in-out'
-            }}
-          />
-          <div
-            style={{
-              width: '100%',
-              height: '2px',
-              backgroundColor: '#64ffda',
-              transform: 'rotate(-45deg) translate(7px, -7px)',
+              backgroundColor: '#70B5FF',
+              transform: 'rotate(-45deg)',
               transition: 'all 0.3s ease-in-out'
             }}
           />
@@ -434,7 +418,7 @@ export default function Home() {
             }}
             className="mobile-menu-item"
           >
-            <span style={{ color: '#64ffda', display: 'block', marginBottom: '5px' }}>01.</span>
+            <span style={{ color: '#70B5FF', display: 'block', marginBottom: '5px' }}>01.</span>
             About
           </a>
           <a
@@ -457,7 +441,7 @@ export default function Home() {
             }}
             className="mobile-menu-item"
           >
-            <span style={{ color: '#64ffda', display: 'block', marginBottom: '5px' }}>02.</span>
+            <span style={{ color: '#70B5FF', display: 'block', marginBottom: '5px' }}>02.</span>
             Experience
           </a>
           <a
@@ -480,7 +464,7 @@ export default function Home() {
             }}
             className="mobile-menu-item"
           >
-            <span style={{ color: '#64ffda', display: 'block', marginBottom: '5px' }}>03.</span>
+            <span style={{ color: '#70B5FF', display: 'block', marginBottom: '5px' }}>03.</span>
             Work
           </a>
           <a
@@ -503,7 +487,7 @@ export default function Home() {
             }}
             className="mobile-menu-item"
           >
-            <span style={{ color: '#64ffda', display: 'block', marginBottom: '5px' }}>04.</span>
+            <span style={{ color: '#70B5FF', display: 'block', marginBottom: '5px' }}>04.</span>
             Contact
           </a>
           <a
@@ -514,9 +498,9 @@ export default function Home() {
             style={{
               fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
               fontSize: '13px',
-              color: '#64ffda',
+              color: '#70B5FF',
               textDecoration: 'none',
-              border: '1px solid #64ffda',
+              border: '1px solid #70B5FF',
               padding: '12px 16px',
               borderRadius: '4px',
               marginTop: '20px',
@@ -552,44 +536,29 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: '#8892b0',
+            color: '#ccd6f6',
             transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
           }}
           className="social-icon"
           aria-label="GitHub"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
           </svg>
         </a>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/resbjrn/"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: '#8892b0',
+            color: '#ccd6f6',
             transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
           }}
           className="social-icon"
           aria-label="Instagram"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            color: '#8892b0',
-            transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
-          }}
-          className="social-icon"
-          aria-label="Twitter"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
           </svg>
         </a>
         <a
@@ -597,29 +566,14 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            color: '#8892b0',
+            color: '#ccd6f6',
             transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
           }}
           className="social-icon"
           aria-label="LinkedIn"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-        </a>
-        <a
-          href="https://codepen.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            color: '#8892b0',
-            transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
-          }}
-          className="social-icon"
-          aria-label="CodePen"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M24 8.182l-.018-.087-.017-.05c-.01-.024-.018-.05-.03-.075-.003-.018-.015-.034-.02-.05l-.035-.067-.03-.05-.044-.06-.046-.045-.06-.045-.046-.03-.06-.044-.044-.04-.015-.02L12.58.19c-.347-.232-.796-.232-1.142 0L.453 7.502l-.015.015-.044.035-.06.05-.038.04-.05.056-.037.045-.05.06c-.02.017-.03.03-.03.046l-.05.06-.02.06c-.02.01-.02.04-.03.07l-.01.05C0 8.12 0 8.15 0 8.18v7.497c0 .044.003.09.01.135l.01.046c.005.03.01.06.02.086l.015.05c.01.027.016.053.027.075l.022.05c.01.025.02.045.034.067l.03.05.03.03.01.015.03.03c.01.015.023.03.035.04l.012.01.045.04.015.02.045.03.045.03.015.02.05.03.035.03.013.01.06.03.01.01.05.026.02.014.03.01.013.01.06.025.01.01.05.02.01.01.06.02.01.01.05.02.01.006.05.015.037.015.02.01.05.015.02.006.026.015.05.01c.03.01.06.014.09.02l.04.01c.03.006.06.01.092.012l.05.01.05.01.064.005.044.005c.04.005.08.005.118.005L12 16.01l11.09 7.257c.175.117.38.176.587.176.206 0 .412-.06.587-.177.347-.23.563-.618.563-1.04V8.18zm-1.18 6.93l-2.664-1.78 2.664-1.78v3.56zm-10.82 3.78L3.04 13.78l9.134-6.1 9.134 6.1-9.134 6.11-9.134-6.11zm10.82-7.47L12 5.365l-10.82 7.057L12 19.48l10.82-7.057zM1.18 8.24v3.56L3.844 10 1.18 8.24z"/>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
           </svg>
         </a>
         <div
@@ -631,135 +585,21 @@ export default function Home() {
         />
       </div>
 
-      {/* Fixed Right Email */}
-      <div
-        style={{
-          position: 'fixed',
-          right: '40px',
-          bottom: '0px',
-          zIndex: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '20px'
-        }}
-        className="email-sidebar"
-      >
-        <a
-          href="mailto:robin.esbjornsson@hotmail.com"
-          style={{
-            fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-            fontSize: '12px',
-            color: '#8892b0',
-            textDecoration: 'none',
-            writingMode: 'vertical-rl',
-            letterSpacing: '0.1em',
-            transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
-          }}
-          className="email-link"
-        >
-          robin.esbjornsson@hotmail.com
-        </a>
-        <div
-          style={{
-            width: '1px',
-            height: '90px',
-            backgroundColor: '#8892b0'
-          }}
-        />
-      </div>
+
 
       {/* Main Content */}
       <main style={{ paddingTop: '70px' }}>
-        {/* Hero Section */}
-        <section
-          style={{
-            minHeight: 'calc(100vh - 70px)',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            maxWidth: '1000px',
-            margin: '0 auto',
-            padding: '0 20px'
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            style={{
-              fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-              fontSize: '16px',
-              color: '#64ffda',
-              marginBottom: '30px'
-            }}
-          >
-            Hi, my name is
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            style={{
-              fontSize: 'clamp(40px, 8vw, 80px)',
-              fontWeight: '400',
-              fontFamily: 'var(--font-bebas-neue), Bebas Neue, sans-serif',
-              color: '#ccd6f6',
-              margin: '0 0 10px 0',
-              lineHeight: '1.1',
-              whiteSpace: 'nowrap',
-              letterSpacing: '0.02em'
-            }}
-          >
-            Robin Esbjörnsson.
-          </motion.h1>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            style={{
-              fontSize: 'clamp(40px, 8vw, 80px)',
-              fontWeight: '400',
-              fontFamily: 'var(--font-bebas-neue), Bebas Neue, sans-serif',
-              color: '#8892b0',
-              margin: '0 0 20px 0',
-              lineHeight: '1.1',
-              letterSpacing: '0.02em'
-            }}
-          >
-            I build things for the web.
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            style={{
-              fontSize: '20px',
-              color: '#8892b0',
-              maxWidth: '540px',
-              marginBottom: '50px',
-              lineHeight: '1.3'
-            }}
-          >
-            I'm an experienced fullstack developer with a passion for creating engaging and accessible user experiences. My work focuses on building robust, scalable applications using modern web technologies.
-          </motion.p>
-        </section>
-
-        {/* About Section */}
+        {/* About Section - Now includes hero content */}
         <motion.section
           id="about"
           initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            padding: '80px 20px',
-            minHeight: '90vh',
+            padding: '100px 20px 80px',
+            minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center'
@@ -777,7 +617,7 @@ export default function Home() {
               gap: '10px'
             }}
           >
-            <span style={{ color: '#64ffda' }}>01.</span> About Me
+            <span style={{ color: '#70B5FF' }}>01.</span> About Me
             <div
               style={{
                 height: '1px',
@@ -789,49 +629,100 @@ export default function Home() {
             />
           </h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '80px' }} className="about-content">
+          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '60px', alignItems: 'start' }} className="about-content">
             <div className="about-text">
-              <p
+              {/* Hero content moved here */}
+              <div style={{ marginBottom: '10px' }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  style={{
+                    fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+                    fontSize: '14px',
+                    color: '#70B5FF',
+                    marginBottom: '5px'
+                  }}
+                >
+                  Hi, my name is
+                </motion.div>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  style={{
+                    fontSize: 'clamp(35px, 6vw, 60px)',
+                    fontWeight: '600',
+                    fontFamily: 'Inter, sans-serif',
+                    color: '#ccd6f6',
+                    margin: '0',
+                    lineHeight: '1.1',
+                    letterSpacing: '-0.02em'
+                  }}
+                >
+                  Robin Esbjörnsson.
+                </motion.h1>
+              </div>
+
+
+
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 style={{
-                  fontSize: '18px',
-                  color: '#8892b0',
-                  marginBottom: '15px',
-                  lineHeight: '1.6'
-                }}
-              >
-                I'm an experienced fullstack developer with a passion for creating engaging and accessible user experiences. My work focuses on building robust, scalable applications using modern web technologies, with particular attention to accessibility standards and best practices.
-              </p>
-              <p
-                style={{
-                  fontSize: '18px',
-                  color: '#8892b0',
-                  marginBottom: '15px',
-                  lineHeight: '1.6'
-                }}
-              >
-                Currently, I work as a Fullstack Developer at <span style={{ color: '#64ffda' }}>Osstell</span>, where I build and ship web and mobile features using <span style={{ color: '#64ffda' }}>React</span>, <span style={{ color: '#64ffda' }}>TypeScript</span>, and <span style={{ color: '#64ffda' }}>React Native</span>. I maintain shared component libraries, integrate secure REST APIs, and spearhead company-wide accessibility initiatives to improve usability for all users.
-              </p>
-              <p
-                style={{
-                  fontSize: '18px',
-                  color: '#8892b0',
-                  marginBottom: '15px',
-                  lineHeight: '1.6'
-                }}
-              >
-                My experience spans various environments — from working with enterprise clients like <span style={{ color: '#64ffda' }}>Ericsson</span> and <span style={{ color: '#64ffda' }}>Renault Trucks</span> to developing quality assurance tools and implementing WCAG 2.1 compliance features.
-              </p>
-              <p
-                style={{
-                  fontSize: '18px',
+                  fontSize: '16px',
                   color: '#8892b0',
                   marginBottom: '20px',
                   lineHeight: '1.6'
                 }}
               >
+                I'm an experienced fullstack developer with a passion for creating engaging and accessible user experiences. My work focuses on building robust, scalable applications using modern web technologies, with particular attention to accessibility standards and best practices.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                style={{
+                  fontSize: '16px',
+                  color: '#8892b0',
+                  marginBottom: '20px',
+                  lineHeight: '1.6'
+                }}
+              >
+                Currently, I work as a Fullstack Developer at <span style={{ color: '#70B5FF' }}>Osstell</span>, where I build and ship web and mobile features using <span style={{ color: '#70B5FF' }}>React</span>, <span style={{ color: '#70B5FF' }}>TypeScript</span>, and <span style={{ color: '#70B5FF' }}>React Native</span>.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                style={{
+                  fontSize: '16px',
+                  color: '#8892b0',
+                  marginBottom: '20px',
+                  lineHeight: '1.6'
+                }}
+              >
+                My experience spans various environments, from working with enterprise clients like <span style={{ color: '#70B5FF' }}>Ericsson</span> and <span style={{ color: '#70B5FF' }}>Renault Trucks</span> to developing web platforms at product companies.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                style={{
+                  fontSize: '16px',
+                  color: '#8892b0',
+                  marginBottom: '15px',
+                  lineHeight: '1.6'
+                }}
+              >
                 Here are a few technologies I've been working with recently:
-              </p>
-              <ul
+              </motion.p>
+              <motion.ul
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(2, minmax(140px, 200px))',
@@ -839,38 +730,38 @@ export default function Home() {
                   padding: 0,
                   margin: 0,
                   listStyle: 'none',
-                  fontSize: '13px',
+                  fontSize: '16px',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace"
                 }}
               >
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   JavaScript (ES6+)
                 </li>
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   TypeScript
                 </li>
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   React
                 </li>
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   Next.js
                 </li>
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   Node.js
                 </li>
-                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative' }}>
-                  <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                <li style={{ color: '#8892b0', paddingLeft: '20px', position: 'relative', marginBottom: '8px' }}>
+                  <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                   React Native
                 </li>
-              </ul>
+              </motion.ul>
             </div>
 
-            {/* Profile Image with Animated Border */}
+            {/* Profile Image - Right side on desktop, top on mobile */}
             <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'flex-start' }} className="about-image">
               <div
                 className="profile-image-wrapper"
@@ -880,13 +771,13 @@ export default function Home() {
                   maxWidth: '300px'
                 }}
               >
-                {/* Animated Border */}
+                {/* Animated Border - Hidden for seamless blend */}
                 <div
                   className="profile-border"
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    border: '3px solid #0a192f',
+                    border: 'none',
                     borderRadius: '55% 45% 45% 55% / 55% 45% 55% 45%',
                     animation: 'morph 18s infinite ease-in-out',
                     zIndex: 2,
@@ -932,8 +823,8 @@ export default function Home() {
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            padding: '80px 20px',
-            minHeight: '90vh',
+            padding: '120px 20px',
+            minHeight: '100vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center'
@@ -951,7 +842,7 @@ export default function Home() {
               gap: '10px'
             }}
           >
-            <span style={{ color: '#64ffda' }}>02.</span> Where I've Worked
+            <span style={{ color: '#70B5FF' }}>02.</span> Where I've Worked
             <div
               style={{
                 height: '1px',
@@ -971,12 +862,12 @@ export default function Home() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  borderLeft: `2px solid ${activeCompany === 'Osstell' ? '#64ffda' : '#233554'}`,
+                  borderLeft: `2px solid ${activeCompany === 'Osstell' ? '#70B5FF' : '#233554'}`,
                   padding: '10px 16px',
                   textAlign: 'left',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-                  fontSize: '14px',
-                  color: activeCompany === 'Osstell' ? '#64ffda' : '#8892b0',
+                  fontSize: '16px',
+                  color: activeCompany === 'Osstell' ? '#70B5FF' : '#8892b0',
                   cursor: 'pointer',
                   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
                   backgroundColor: activeCompany === 'Osstell' ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
@@ -989,12 +880,12 @@ export default function Home() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  borderLeft: `2px solid ${activeCompany === 'Ebbot' ? '#64ffda' : '#233554'}`,
+                  borderLeft: `2px solid ${activeCompany === 'Ebbot' ? '#70B5FF' : '#233554'}`,
                   padding: '10px 16px',
                   textAlign: 'left',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-                  fontSize: '14px',
-                  color: activeCompany === 'Ebbot' ? '#64ffda' : '#8892b0',
+                  fontSize: '16px',
+                  color: activeCompany === 'Ebbot' ? '#70B5FF' : '#8892b0',
                   cursor: 'pointer',
                   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
                   backgroundColor: activeCompany === 'Ebbot' ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
@@ -1007,12 +898,12 @@ export default function Home() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  borderLeft: `2px solid ${activeCompany === 'HiQ' ? '#64ffda' : '#233554'}`,
+                  borderLeft: `2px solid ${activeCompany === 'HiQ' ? '#70B5FF' : '#233554'}`,
                   padding: '10px 16px',
                   textAlign: 'left',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-                  fontSize: '14px',
-                  color: activeCompany === 'HiQ' ? '#64ffda' : '#8892b0',
+                  fontSize: '16px',
+                  color: activeCompany === 'HiQ' ? '#70B5FF' : '#8892b0',
                   cursor: 'pointer',
                   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
                   backgroundColor: activeCompany === 'HiQ' ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
@@ -1025,12 +916,12 @@ export default function Home() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  borderLeft: `2px solid ${activeCompany === 'Decerno' ? '#64ffda' : '#233554'}`,
+                  borderLeft: `2px solid ${activeCompany === 'Decerno' ? '#70B5FF' : '#233554'}`,
                   padding: '10px 16px',
                   textAlign: 'left',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-                  fontSize: '14px',
-                  color: activeCompany === 'Decerno' ? '#64ffda' : '#8892b0',
+                  fontSize: '16px',
+                  color: activeCompany === 'Decerno' ? '#70B5FF' : '#8892b0',
                   cursor: 'pointer',
                   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
                   backgroundColor: activeCompany === 'Decerno' ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
@@ -1043,12 +934,12 @@ export default function Home() {
                 style={{
                   background: 'none',
                   border: 'none',
-                  borderLeft: `2px solid ${activeCompany === 'TietoEVRY' ? '#64ffda' : '#233554'}`,
+                  borderLeft: `2px solid ${activeCompany === 'TietoEVRY' ? '#70B5FF' : '#233554'}`,
                   padding: '10px 16px',
                   textAlign: 'left',
                   fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-                  fontSize: '14px',
-                  color: activeCompany === 'TietoEVRY' ? '#64ffda' : '#8892b0',
+                  fontSize: '16px',
+                  color: activeCompany === 'TietoEVRY' ? '#70B5FF' : '#8892b0',
                   cursor: 'pointer',
                   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
                   backgroundColor: activeCompany === 'TietoEVRY' ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
@@ -1063,22 +954,22 @@ export default function Home() {
               {activeCompany === 'Osstell' && (
                 <div>
                   <h3 style={{ fontSize: '22px', color: '#ccd6f6', marginBottom: '5px' }}>
-                    Fullstack Developer <span style={{ color: '#64ffda' }}>@ Osstell</span>
+                    Fullstack Developer <span style={{ color: '#70B5FF' }}>@ Osstell</span>
                   </h3>
                   <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px', color: '#8892b0', marginBottom: '25px' }}>
                     April 2025 - Present
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0 }}>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Built and shipped web and mobile features in React, TypeScript, and React Native
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Developed and integrated secure REST APIs and authentication flows
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Spearhead company-wide accessibility initiatives
                     </li>
                   </ul>
@@ -1088,22 +979,22 @@ export default function Home() {
               {activeCompany === 'Ebbot' && (
                 <div>
                   <h3 style={{ fontSize: '22px', color: '#ccd6f6', marginBottom: '5px' }}>
-                    Fullstack Developer <span style={{ color: '#64ffda' }}>@ Ebbot</span>
+                    Fullstack Developer <span style={{ color: '#70B5FF' }}>@ Ebbot</span>
                   </h3>
                   <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px', color: '#8892b0', marginBottom: '25px' }}>
                     May 2024 - April 2025
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0 }}>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Led development and optimization of the company's core platform with TypeScript, React, and Node.js in a fast-paced environment
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Translated user research and feedback into thoughtful UX improvements across key product areas
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Drove modernization initiatives and collaborated closely with product managers and designers to shape new features
                     </li>
                   </ul>
@@ -1113,22 +1004,22 @@ export default function Home() {
               {activeCompany === 'HiQ' && (
                 <div>
                   <h3 style={{ fontSize: '22px', color: '#ccd6f6', marginBottom: '5px' }}>
-                    Frontend Developer <span style={{ color: '#64ffda' }}>@ HiQ</span>
+                    Frontend Developer <span style={{ color: '#70B5FF' }}>@ HiQ</span>
                   </h3>
                   <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px', color: '#8892b0', marginBottom: '25px' }}>
                     June 2022 - May 2024
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0 }}>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Built and launched enterprise-grade React/TypeScript applications for clients including Ericsson and Renault Trucks
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Implemented accessibility features and patterns to ensure compliance with WCAG 2.1 standards
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Worked in agile, cross-functional teams, collaborating with designers, backend developers, and QA to deliver robust solutions
                     </li>
                   </ul>
@@ -1138,22 +1029,22 @@ export default function Home() {
               {activeCompany === 'Decerno' && (
                 <div>
                   <h3 style={{ fontSize: '22px', color: '#ccd6f6', marginBottom: '5px' }}>
-                    Frontend Developer <span style={{ color: '#64ffda' }}>@ Decerno</span>
+                    Frontend Developer <span style={{ color: '#70B5FF' }}>@ Decerno</span>
                   </h3>
                   <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px', color: '#8892b0', marginBottom: '25px' }}>
                     January 2022 - June 2022
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0 }}>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Developed key responsive features for client applications, focusing on usability and stability
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Worked with and improved established QA processes that improved testing coverage and reduced platform issues
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Designed and implemented advanced React components while gaining consulting experience in enterprise environments
                     </li>
                   </ul>
@@ -1163,22 +1054,22 @@ export default function Home() {
               {activeCompany === 'TietoEVRY' && (
                 <div>
                   <h3 style={{ fontSize: '22px', color: '#ccd6f6', marginBottom: '5px' }}>
-                    UX Designer <span style={{ color: '#64ffda' }}>@ TietoEVRY</span>
+                    UX Designer <span style={{ color: '#70B5FF' }}>@ TietoEVRY</span>
                   </h3>
                   <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px', color: '#8892b0', marginBottom: '25px' }}>
                     June 2019 - April 2020
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0 }}>
-                    <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                    <li style={{ color: '#8892b0', fontSize: 'px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Led user testing initiatives and transformed findings into actionable interface updates and redesigns
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Collaborated with developers to operationalize UX concepts and ensure consistency across multi-platform interfaces
                     </li>
                     <li style={{ color: '#8892b0', fontSize: '18px', lineHeight: '1.6', marginBottom: '10px', paddingLeft: '30px', position: 'relative' }}>
-                      <span style={{ position: 'absolute', left: 0, color: '#64ffda' }}>▹</span>
+                      <span style={{ position: 'absolute', left: 0, color: '#70B5FF' }}>▹</span>
                       Developed and sustained design systems, facilitated workshops, and assisted stakeholders in embracing user-centered methodologies
                     </li>
                   </ul>
@@ -1198,8 +1089,11 @@ export default function Home() {
           style={{
             maxWidth: '1000px',
             margin: '0 auto',
-            padding: '80px 20px',
-            minHeight: '90vh'
+            padding: '120px 20px',
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
           }}
         >
           <h2
@@ -1214,7 +1108,7 @@ export default function Home() {
               gap: '10px'
             }}
           >
-            <span style={{ color: '#64ffda' }}>03.</span> Some Things I've Built
+            <span style={{ color: '#70B5FF' }}>03.</span> Some Things I've Built
             <div
               style={{
                 height: '1px',
@@ -1227,28 +1121,52 @@ export default function Home() {
           </h2>
 
           {/* Project Cards */}
-          <div style={{ marginTop: '50px' }}>
+          <div style={{ marginTop: '50px', display: 'grid', gap: '30px' }}>
             <a
               href="https://kanban-steel.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               style={{
                 display: 'block',
-                marginBottom: '40px',
                 textDecoration: 'none',
-                transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
+                backgroundColor: '#112240',
+                padding: '30px',
+                borderRadius: '8px',
+                border: '1px solid #233554',
+                transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
+                cursor: 'pointer'
               }}
               className="project-card"
             >
-              <h3 style={{ fontSize: '24px', color: '#ccd6f6', marginBottom: '10px' }}>
+              <h3 style={{ fontSize: '24px', color: '#ccd6f6', marginBottom: '15px', fontWeight: '600' }}>
                 Kanban Board App →
               </h3>
-              <p style={{ fontSize: '18px', color: '#8892b0', marginBottom: '15px', lineHeight: '1.4' }}>
+              <p style={{ fontSize: '16px', color: '#8892b0', marginBottom: '20px', lineHeight: '1.6' }}>
                 A task management application with drag-and-drop functionality for organizing projects.
               </p>
-              <div style={{ display: 'flex', gap: '15px', fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px' }}>
-                <span style={{ color: '#8892b0' }}>React</span>
-                <span style={{ color: '#8892b0' }}>TypeScript</span>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <span style={{
+                  fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+                  fontSize: '12px',
+                  color: '#70B5FF',
+                  backgroundColor: 'rgba(112, 181, 255, 0.1)',
+                  padding: '6px 12px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(112, 181, 255, 0.2)'
+                }}>
+                  React
+                </span>
+                <span style={{
+                  fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+                  fontSize: '12px',
+                  color: '#70B5FF',
+                  backgroundColor: 'rgba(112, 181, 255, 0.1)',
+                  padding: '6px 12px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(112, 181, 255, 0.2)'
+                }}>
+                  TypeScript
+                </span>
               </div>
             </a>
 
@@ -1259,19 +1177,44 @@ export default function Home() {
               style={{
                 display: 'block',
                 textDecoration: 'none',
-                transition: 'transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
+                backgroundColor: '#112240',
+                padding: '30px',
+                borderRadius: '8px',
+                border: '1px solid #233554',
+                transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
+                cursor: 'pointer'
               }}
               className="project-card"
             >
-              <h3 style={{ fontSize: '24px', color: '#ccd6f6', marginBottom: '10px' }}>
+              <h3 style={{ fontSize: '24px', color: '#ccd6f6', marginBottom: '15px', fontWeight: '600' }}>
                 Flashcard Language App →
               </h3>
-              <p style={{ fontSize: '18px', color: '#8892b0', marginBottom: '15px', lineHeight: '1.4' }}>
+              <p style={{ fontSize: '16px', color: '#8892b0', marginBottom: '20px', lineHeight: '1.6' }}>
                 A language learning app that helps you master new words through interactive flashcards.
               </p>
-              <div style={{ display: 'flex', gap: '15px', fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '13px' }}>
-                <span style={{ color: '#8892b0' }}>React</span>
-                <span style={{ color: '#8892b0' }}>UX Design</span>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <span style={{
+                  fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+                  fontSize: '12px',
+                  color: '#70B5FF',
+                  backgroundColor: 'rgba(112, 181, 255, 0.1)',
+                  padding: '6px 12px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(112, 181, 255, 0.2)'
+                }}>
+                  React
+                </span>
+                <span style={{
+                  fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+                  fontSize: '12px',
+                  color: '#70B5FF',
+                  backgroundColor: 'rgba(112, 181, 255, 0.1)',
+                  padding: '6px 12px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(112, 181, 255, 0.2)'
+                }}>
+                  UX Design
+                </span>
               </div>
             </a>
           </div>
@@ -1296,31 +1239,52 @@ export default function Home() {
             textAlign: 'center'
           }}
         >
-          <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '16px', color: '#64ffda', marginBottom: '20px' }}>
+          <p style={{ fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace", fontSize: '16px', color: '#70B5FF', marginBottom: '20px' }}>
             04. What's Next?
           </p>
           <h2 style={{ fontSize: '60px', fontWeight: '600', color: '#ccd6f6', marginBottom: '20px' }}>
             Get In Touch
           </h2>
           <p style={{ fontSize: '18px', color: '#8892b0', marginBottom: '50px', lineHeight: '1.5' }}>
-            Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
+
+
+
+
+
+
+
+    <div >
           <a
             href="mailto:robin.esbjornsson@hotmail.com"
             style={{
               fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-              fontSize: '14px',
-              color: '#64ffda',
+              fontSize: '18px',
+              color: '#ffffff',
               textDecoration: 'none',
-              border: '1px solid #64ffda',
-              padding: '20px 28px',
-              borderRadius: '4px',
+              letterSpacing: '0.1em',
               transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
             }}
-            className="cta-button"
+            className="email-link"
           >
-            Say Hello
+            robin.esbjornsson@hotmail.com
           </a>
+      
+              <p
+            style={{
+              fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
+              fontSize: '18px',
+              color: '#ffffff',
+              textDecoration: 'none',
+              letterSpacing: '0.1em',
+              transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)'
+            }}
+          >
+            +46 721 92 33 58
+          </p>
+    </div>
+
         </motion.section>
       </main>
 
@@ -1348,7 +1312,7 @@ export default function Home() {
               className="mobile-social-icon"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
               </svg>
             </a>
             <a
@@ -1362,7 +1326,7 @@ export default function Home() {
               className="mobile-social-icon"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
             <a
@@ -1376,7 +1340,7 @@ export default function Home() {
               className="mobile-social-icon"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
               </svg>
             </a>
           </div>
@@ -1384,8 +1348,8 @@ export default function Home() {
             href="mailto:robin.esbjornsson@hotmail.com"
             style={{
               fontFamily: "'SF Mono', 'Fira Code', 'JetBrains Mono', monospace",
-              fontSize: '14px',
-              color: '#8892b0',
+              fontSize: '18px',
+              color: '#fffff',
               textDecoration: 'none',
               display: 'block',
               marginBottom: '20px'
@@ -1405,17 +1369,17 @@ export default function Home() {
         }
 
         .logo-button:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
         /* Desktop nav link hover */
         .nav-link:hover {
-          color: #64ffda !important;
+          color: #70B5FF !important;
         }
 
         .nav-link:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
@@ -1426,17 +1390,17 @@ export default function Home() {
         }
 
         .resume-button:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
         /* Mobile menu items hover */
         .mobile-menu-item:hover {
-          color: #64ffda !important;
+          color: #70B5FF !important;
         }
 
         .mobile-menu-item:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
@@ -1446,29 +1410,29 @@ export default function Home() {
         }
 
         .mobile-resume-button:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
         /* Social icons hover */
         .social-icon:hover {
-          color: #64ffda;
+          color: #70B5FF;
           transform: translateY(-3px);
         }
 
         .social-icon:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
         /* Email link hover */
         .email-link:hover {
-          color: #64ffda;
+          color: #70B5FF;
           transform: translateY(-3px);
         }
 
         .email-link:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
@@ -1479,22 +1443,24 @@ export default function Home() {
         }
 
         .cta-button:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
         /* Project card hover */
         .project-card:hover {
           transform: translateY(-5px);
+          border-color: #70B5FF !important;
+          box-shadow: 0 20px 30px -10px rgba(2, 12, 27, 0.7);
         }
 
         /* Mobile social icon hover */
         .mobile-social-icon:hover {
-          color: #64ffda;
+          color: #70B5FF;
         }
 
         .mobile-social-icon:focus {
-          outline: 2px solid #64ffda;
+          outline: 2px solid #70B5FF;
           outline-offset: 4px;
         }
 
@@ -1554,11 +1520,11 @@ export default function Home() {
           }
 
           .about-text {
-            order: 1;
+            order: 2;
           }
 
           .about-image {
-            order: 2;
+            order: 1;
             justify-content: center !important;
           }
 
