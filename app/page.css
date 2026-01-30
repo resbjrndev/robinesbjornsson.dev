@@ -1,0 +1,527 @@
+:root {
+  --color-primary: #70B5FF;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c8d0e8;
+  --color-bg-primary: #020c1b;
+  --color-bg-secondary: #0a1628;
+  --color-border: #1a2332;
+  --color-white: #ffffff;
+  --spacing-mobile: 25px;
+  --transition-standard: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-base: 18px;
+  --font-size-large: 20px;
+}
+
+* {
+  font-family: var(--font-primary) !important;
+}
+
+h2 {
+  font-size: 36px !important;
+}
+
+h3 {
+  font-size: 24px !important;
+}
+
+p, li {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+}
+
+.logo-button:focus,
+.nav-link:focus,
+.resume-button:focus,
+.mobile-menu-item:focus,
+.mobile-resume-button:focus,
+.social-icon:focus,
+.email-link:focus,
+.cta-button:focus,
+.mobile-social-icon:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.nav-link:hover,
+.mobile-menu-item:hover {
+  color: var(--color-primary);
+}
+
+.resume-button:hover,
+.mobile-resume-button:hover,
+.cta-button:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-icon:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.email-link:hover {
+  color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.mobile-social-icon:hover {
+  color: var(--color-primary);
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 55% 45% 45% 55% / 55% 45% 55% 45%;
+  }
+  14% {
+    border-radius: 45% 55% 50% 50% / 50% 60% 40% 50%;
+  }
+  28% {
+    border-radius: 50% 50% 40% 60% / 45% 55% 45% 55%;
+  }
+  42% {
+    border-radius: 60% 40% 55% 45% / 50% 50% 50% 50%;
+  }
+  57% {
+    border-radius: 45% 55% 60% 40% / 55% 45% 60% 40%;
+  }
+  71% {
+    border-radius: 50% 50% 45% 55% / 40% 60% 45% 55%;
+  }
+  85% {
+    border-radius: 40% 60% 55% 45% / 55% 45% 50% 50%;
+  }
+  100% {
+    border-radius: 55% 45% 45% 55% / 55% 45% 55% 45%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ==================== GLASS SECTION STYLING ==================== */
+
+.glass-section {
+  background: rgba(2, 12, 27, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 40px;
+  margin: 20px;
+}
+
+@media (max-width: 767px) {
+  .glass-section {
+    padding: 24px 20px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+}
+
+/* Nav container base */
+.nav-container {
+  position: relative;
+}
+
+/* Glass effect layer - blur and enhance */
+.nav-container.liquid-glass .glass-effect-layer {
+  backdrop-filter: blur(16px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(1.05);
+}
+
+/* Mobile menu glass effect */
+.mobile-dropdown-menu.liquid-glass .glass-effect-layer {
+  backdrop-filter: blur(16px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(1.05);
+}
+
+/* Hover glow effect for nav container - prismatic border intensifies */
+.nav-container:hover .glass-prismatic {
+  background: linear-gradient(90deg, rgba(255, 120, 180, 0.8) 0%, rgba(120, 180, 255, 0.8) 25%, rgba(120, 255, 200, 0.7) 50%, rgba(255, 200, 120, 0.8) 75%, rgba(255, 120, 180, 0.8) 100%);
+  padding: 2px;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-logo:focus,
+.nav-link-pill:focus {
+  outline: none;
+}
+
+.nav-link-pill {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 500;
+  color: #ccd6f6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link-pill:hover {
+  color: var(--color-primary);
+  background-color: rgba(112, 181, 255, 0.08);
+}
+
+.nav-link-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links-desktop {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Hide hamburger on desktop, show on mobile */
+.hamburger-menu-pill {
+  display: none !important;
+}
+
+.glass-shimmer {
+  animation: shimmer 8s infinite linear;
+}
+
+.mobile-menu-link:hover {
+  background-color: rgba(112, 181, 255, 0.1);
+  color: var(--color-primary);
+}
+
+.company-tab-button:hover {
+  color: #70B5FF !important;
+}
+
+/* Mobile dropdown positioning */
+@media (max-width: 767px) {
+  .mobile-dropdown-menu {
+    width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .mobile-dropdown-menu {
+    top: 85px !important;
+    padding: 20px !important;
+  }
+
+  .nav-name {
+    max-width: 100px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-name {
+    display: none !important;
+  }
+
+  .nav-container {
+    padding: 10px 12px !important;
+    gap: 10px !important;
+  }
+}
+
+/* Old nav-menu (keeping for compatibility) */
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* About Section Grid Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.experience-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+.company-tabs {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+/* Company tab button styles */
+.company-tab-button {
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-tab-button.active {
+  border-left: 2px solid #70B5FF;
+}
+
+.social-sidebar {
+  position: fixed;
+  left: 40px;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  overflow: visible;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75vw;
+  max-width: 400px;
+  height: 100vh;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px;
+  z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.mobile-social-links {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .social-sidebar,
+  .email-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  nav > div {
+    width: calc(100vw - 80px) !important;
+    max-width: 90vw !important;
+  }
+
+  .nav-container {
+    padding: 10px 18px !important;
+    gap: 16px !important;
+  }
+
+  .nav-links-desktop {
+    gap: 16px !important;
+  }
+
+  .nav-link-pill {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
+
+  .nav-link-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  nav > div {
+    width: calc(100vw - 60px) !important;
+    max-width: 95vw !important;
+  }
+
+  .nav-links-desktop {
+    display: none !important;
+  }
+
+  .hamburger-menu-pill {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-nav {
+    padding-left: var(--spacing-mobile);
+    padding-right: var(--spacing-mobile);
+    overflow: visible;
+  }
+
+  /* Pill Navigation Mobile Styles */
+  .main-nav-wrapper {
+    width: calc(100vw - 40px) !important;
+    max-width: calc(100vw - 40px) !important;
+  }
+
+  .nav-container {
+    padding: 10px 16px !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .nav-container > div {
+    gap: 12px !important;
+  }
+
+  .nav-container::before {
+    display: none;
+  }
+
+  .glass-shimmer {
+    display: none;
+  }
+
+  .nav-name {
+    font-size: 13px !important;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .nav-links-desktop {
+    display: none !important;
+  }
+
+  /* Old nav-menu */
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-text {
+    order: 2;
+  }
+
+  .about-image {
+    order: 1;
+    justify-content: center;
+  }
+
+  .experience-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .company-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    min-width: auto;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0;
+    margin: 0 -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    box-sizing: content-box;
+  }
+
+  .company-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .company-tab-button {
+    border-left: none !important;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    padding: 12px 16px !important;
+    flex-shrink: 0;
+  }
+
+  .company-tab-button.active {
+    border-left: none !important;
+    border-bottom: 2px solid #70B5FF !important;
+  }
+
+  .job-details {
+    padding: 0;
+  }
+
+  .mobile-social-links {
+    display: block;
+  }
+
+  .social-sidebar {
+    display: none;
+  }
+
+  main section {
+    padding-left: var(--spacing-mobile);
+    padding-right: var(--spacing-mobile);
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
